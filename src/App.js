@@ -1,3 +1,4 @@
+import './App.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as contactAction from './actions/contactAction';
@@ -40,7 +41,7 @@ class App extends Component {
           </li>
         </div>
         <div className="col-md-2">
-          <button onClick={(e) => this.deleteContact(e, index)} className="btn btn-danger">
+          <button onClick={(e) => this.deleteContact(e, index)} className="button_remove">
             Remove
           </button>
         </div>
@@ -56,14 +57,14 @@ class App extends Component {
   render() {
 
     return(
-      <div className="container">
+      <div className="header">
         <h1>Clientside Contacts Application</h1>
         <hr />
-        <div>
+        <div className="card">
           <h3>Add Contact Form</h3>
           <form onSubmit={this.handleSubmit}>
-            <input type="text" onChange={this.handleChange} className="form-control" value={this.state.name}/><br />
-            <input type="submit" className="btn btn-success" value="ADD"/>
+            <input type="text" onChange={this.handleChange} className="input" value={this.state.name}/><br />
+            <input type="submit" className="button_add" value="ADD"/>
           </form>
           <hr />
         { <ul className="list-group">
